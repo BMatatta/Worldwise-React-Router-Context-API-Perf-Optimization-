@@ -8,7 +8,8 @@ import {
 } from "react";
 
 const CitiesContext = createContext();
-const BASE_URL = "http://localhost:8000";
+// const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://api.jsonbin.io/v3/b/67d0a4e38561e97a50ea2939";
 
 const initialState = {cities: [], isLoading: false, currCity: {}, error: ""};
 
@@ -51,7 +52,8 @@ function CitiesProvider({children}) {
     async function fetchCities() {
       dispatch({type: "loading"});
       try {
-        const res = await fetch(`${BASE_URL}/cities`);
+        // const res = await fetch(`${BASE_URL}/cities`);
+        const res = await fetch(`${BASE_URL}`);
         const data = await res.json();
         dispatch({type: "cities/loaded", payload: data});
       } catch {
@@ -67,7 +69,8 @@ function CitiesProvider({children}) {
 
       dispatch({type: "loading"});
       try {
-        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        // const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const res = await fetch(`${BASE_URL}/${id}`);
         const data = await res.json();
         dispatch({type: "city/loaded", payload: data});
       } catch {
@@ -80,7 +83,8 @@ function CitiesProvider({children}) {
   async function createCity(newCity) {
     dispatch({type: "loading"});
     try {
-      const res = await fetch(`${BASE_URL}/cities`, {
+      // const res = await fetch(`${BASE_URL}/cities`, {
+      const res = await fetch(`${BASE_URL}`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
@@ -97,7 +101,8 @@ function CitiesProvider({children}) {
   async function deleteCity(id) {
     dispatch({type: "loading"});
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
+      await fetch(`${BASE_URL}/${id}`, {
+        // await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
       dispatch({type: "cities/deleted", payload: id});
