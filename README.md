@@ -14,4 +14,5 @@ WorldWise is an app that lets you pin any location on the world map and share yo
 
 1. Download ZIP file and unpack in the designated folder
 2. Open the project folder in your IDE and run "npm i" to install dependencies
-3. Since this is a Vite-powered app, start the app using the "npm run dev" command
+3. Run the "npm run server" command to open up the connection to the .json file
+4. Since this is a Vite-powered app, start the app using the "npm run dev" command

@@ -33,6 +33,17 @@
         "lat": "42.5544580525621",
         "lng": "12.610822818510684"
       }
+    },
+    {
+      "id": 3,
+      "cityName": "Macedo de Cavaleiros",
+      "country": "Portugal",
+      "date": "2025-07-04T16:35:05.968Z",
+      "notes": "afas",
+      "position": {
+        "lat": "41.50990398932704",
+        "lng": "-6.877441406250001"
+      }
     }
   ]
 }
